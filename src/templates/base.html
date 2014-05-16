@@ -80,6 +80,9 @@
                 <li><a href="/newticket">{% trans "New Ticket" %}</a></li>
                 {% endif %}
                 <li><a href="/roadmap">{% trans "Roadmap" %}</a></li>
+                {% if user.is_active %}
+                <li><a href="/paste">Paste</a></li>
+                {% endif %}
                 <li><a href="/browser">{% trans "Browse Source" %}</a></li>
                 <li><a href="/ci">{% trans "Continuous Integration" %}</a></li>
               </ul>
@@ -169,7 +172,7 @@
       {% endif %}
       <p class="col-lg-12 text-center">
         {% trans "The contents of this site is published under license" %}
-        <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/">
+        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/">
           {% trans "Creative Commons - attribution, non-commercial" %}
         </a>
       </p>
