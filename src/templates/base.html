@@ -87,9 +87,14 @@
                 <li><a href="/ci">{% trans "Continuous Integration" %}</a></li>
               </ul>
             </li>
-            <li class="hidden-lg">
+            <li class="hidden-lg hidden-md">
               <a href="{% url 'haystack_search' %}?q=">{% trans "Search" %}</a>
             </li>
+            {% if user.is_active %}
+            <li>
+              <a href="/wiki/ComoUsarColab">{% trans "Help" %}</a>
+            </li>
+            {% endif %}
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
