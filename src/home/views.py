@@ -11,10 +11,15 @@ from haystack.query import SearchQuerySet
 
 from proxy.models import WikiCollabCount, TicketCollabCount
 from super_archives.models import Thread
+from accounts.forms import UserCreationForm
+from accounts.views import signup
 
 
 def index(request):
     """Index page view"""
+
+    if request.method == 'POST':
+        return signup(request)
 
 
     latest_threads = Thread.objects.all()[:6]
@@ -40,6 +45,9 @@ def index(request):
     for key in count_types.keys():
         count_types[trans(key)] = count_types.pop(key)
 
+
+    user_form = UserCreationForm()
+
     context = {
         'hottest_threads': hottest_threads[:6],
         'latest_threads': latest_threads,
@@ -47,7 +55,9 @@ def index(request):
         'latest_results': SearchQuerySet().all().order_by(
             '-modified', '-created'
         )[:6],
+        'user_form': user_form,
     }
+
     return render(request, 'home.html', context)
 
 

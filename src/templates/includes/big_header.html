@@ -1,9 +1,33 @@
 {% load i18n %}
 
-<div class="row hidden-xs hidden-sm">
-  <div class="col-lg-2 col-lg-offset-5 text-center">
-    <img src="{{ STATIC_URL }}img/logo.png" alt="Colab" />
-  </div>
+{% if not user.is_active %}
+
+<div class="jumbotron" style="background: #25528C; margin-top: 10px; color: #fff;">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 style="font-size:50px;">Comunidades Interlegis</h1>
+            <p>Este é o ambiente colaborativo do Interlegis, que serve como base para as pessoas que participam das comunidades de prática se comunicarem e organizarem o seu conhecimento, além de fazerem a gestão de projetos, produtos e serviços desenvolvidos colaborativamente com o Interlegis.</p>
+            <p><a href="/wiki/ComoUsarColab" style="color:#fff">Saiba mais...</a></p>
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+            <form action="." method="POST" role="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input id="{{ user_form.first_name.id_for_label }}" class="form-control" name="{{ user_form.first_name.html_name }}" maxlength="{{ user_form.first_name.field.max_length }} " type="text" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <input id="{{ user_form.last_name.id_for_label }}" class="form-control" name="{{ user_form.last_name.html_name }}" maxlength="{{ user_form.last_name.field.max_length }} " type="text" placeholder="Sobrenome">
+                </div>
+                <div class="form-group">
+                    <input id="{{ user_form.email.id_for_label }}" class="form-control" name="{{ user_form.email.html_name }}" maxlength="{{ user_form.email.field.max_length }} " type="text" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <input id="{{ user_form.username.id_for_label }}" class="form-control" name="{{ user_form.username.html_name }}" maxlength="{{ user_form.username.field.max_length }} " type="text" placeholder="Nome de usuário">
+                </div>
+                <button type="submit" class="btn btn-default btn-lg btn-block">Cadastre-se no Colab</button>
+            </form>
+        </div>
+    </div>
 </div>
 
-<h3 class="text-center hidden-xs hidden-sm">{% trans "INTERLEGIS COMMUNITIES" %}</h3>
+{% endif %}
