@@ -428,3 +428,21 @@ span.highlighted {
     max-width: 350px;
     width: 350px;
 }
+
+/* Chart div */
+.chart {
+    text-align: center;
+}
+
+.chart > canvas {
+    width: 250px;
+}
+
+.chart > p {
+    text-align: center;
+    margin-top: 10px;
+}
+.chart > p > label {
+    margin: 0 3px;
+    line-height: 2.5em;
+}
