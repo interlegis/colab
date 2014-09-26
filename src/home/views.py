@@ -18,10 +18,6 @@ from accounts.views import signup
 def index(request):
     """Index page view"""
 
-    if request.method == 'POST':
-        return signup(request)
-
-
     latest_threads = Thread.objects.all()[:6]
     hottest_threads = Thread.highest_score.from_haystack()[:6]
 
