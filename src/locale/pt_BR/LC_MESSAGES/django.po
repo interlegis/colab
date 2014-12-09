@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-07 12:49+0000\n"
+"POT-Creation-Date: 2014-12-09 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgid "Subscribe to groups"
 msgstr "Inscreva-se nos grupos"
 
 #: accounts/templates/accounts/user_create_form.html:60
-#: templates/base.html:106 templates/base.html.py:111
+#: templates/base.html:107 templates/base.html.py:112
 msgid "Register"
 msgstr "Cadastre-se"
 
@@ -284,11 +284,11 @@ msgstr ""
 
 #: accounts/templates/accounts/user_update_form.html:193
 msgid ""
-"This feature is available only for those who need to change the password for some "
-"reason as having an old user with the same username, forgot your password to "
-"commit, usage of other XMPP Client for connection. Usually, you won't need "
-"to change this password. Only change it if you are sure about what you are "
-"doing."
+"This feature is available only for those who need to change the password for "
+"some reason as having an old user with the same username, forgot your "
+"password to commit, usage of other XMPP Client for connection. Usually, you "
+"won't need to change this password. Only change it if you are sure about "
+"what you are doing."
 msgstr ""
 "Este recurso está disponível para quem precisa trocar a senha por algum "
 "motivo como ter um usuário antigo com mesmo nome de usuário, esqueceu da "
@@ -532,7 +532,7 @@ msgid "Latest collaborations"
 msgstr "Últimas colaborações"
 
 #: search/forms.py:16 search/templates/search/search.html:41
-#: templates/base.html:91
+#: templates/base.html:92
 msgid "Search"
 msgstr "Busca"
 
@@ -796,7 +796,7 @@ msgstr "Lista de e-mail não existe"
 msgid "Unknown error trying to connect to Mailman API"
 msgstr "Erro desconhecido na conexão com a API do Mailman"
 
-#: super_archives/views.py:151
+#: super_archives/views.py:152
 msgid ""
 "The email address you are trying to verify either has already been verified "
 "or does not exist."
@@ -804,7 +804,7 @@ msgstr ""
 "O endereço de e-mail que você está tentando verificar ou já foi verificado "
 "ou não existe."
 
-#: super_archives/views.py:162
+#: super_archives/views.py:163
 msgid ""
 "The email address you are trying to verify is already an active email "
 "address."
@@ -812,7 +812,7 @@ msgstr ""
 "O endereço de e-mail que você está tentando verificar já é um endereço de e-"
 "mail ativo"
 
-#: super_archives/views.py:172
+#: super_archives/views.py:173
 msgid "Email address verified!"
 msgstr "Endereço de e-mail verificado!"
 
@@ -882,20 +882,20 @@ msgstr "Etiquetas:"
 
 #: super_archives/templates/superarchives/thread-dashboard.html:4
 #: super_archives/templates/superarchives/thread-dashboard.html:7
-#: templates/base.html:66
+#: templates/base.html:67
 msgid "Groups"
 msgstr "Grupos"
 
-#: super_archives/templates/superarchives/thread-dashboard.html:17
+#: super_archives/templates/superarchives/thread-dashboard.html:21
 msgid "latest"
 msgstr "mais recentes"
 
-#: super_archives/templates/superarchives/thread-dashboard.html:25
-#: super_archives/templates/superarchives/thread-dashboard.html:39
+#: super_archives/templates/superarchives/thread-dashboard.html:29
+#: super_archives/templates/superarchives/thread-dashboard.html:43
 msgid "more..."
 msgstr "mais..."
 
-#: super_archives/templates/superarchives/thread-dashboard.html:31
+#: super_archives/templates/superarchives/thread-dashboard.html:35
 msgid "most relevant"
 msgstr "mais relevantes"
 
@@ -985,78 +985,78 @@ msgstr "Não encontrado. Continue procurando! :)"
 msgid "Ooopz... something went wrong!"
 msgstr "Opa... algo saiu errado!"
 
-#: templates/base.html:63
+#: templates/base.html:64
 msgid "Timeline"
 msgstr "Linha do Tempo"
 
-#: templates/base.html:69
+#: templates/base.html:70
 msgid "Blogs"
 msgstr ""
 
-#: templates/base.html:72
+#: templates/base.html:73
 msgid "Contribute"
 msgstr "Contribua"
 
-#: templates/base.html:76
+#: templates/base.html:77
 msgid "New Wiki Page"
 msgstr "Nova Página Wiki"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "View Tickets"
 msgstr "Ver Tiquetes"
 
-#: templates/base.html:80
+#: templates/base.html:81
 msgid "New Ticket"
 msgstr "Novo Tíquete"
 
-#: templates/base.html:82
+#: templates/base.html:83
 msgid "Roadmap"
 msgstr "Planejamento"
 
-#: templates/base.html:86
+#: templates/base.html:87
 msgid "Browse Source"
 msgstr "Códigos Fontes"
 
-#: templates/base.html:87
+#: templates/base.html:88
 msgid "Continuous Integration"
 msgstr "Integração Contínua"
 
-#: templates/base.html:95
+#: templates/base.html:96
 msgid "Help"
 msgstr "Ajuda"
 
-#: templates/base.html:107 templates/base.html.py:112
+#: templates/base.html:108 templates/base.html.py:113
 msgid "Login"
 msgstr "Entrar"
 
-#: templates/base.html:126
+#: templates/base.html:127
 msgid "My Profile"
 msgstr "Meu Perfil"
 
-#: templates/base.html:127
+#: templates/base.html:128
 msgid "Logout"
 msgstr "Sair"
 
-#: templates/base.html:139 templates/base.html.py:142
+#: templates/base.html:140 templates/base.html.py:143
 msgid "Search here..."
 msgstr "Pesquise aqui..."
 
-#: templates/base.html:155
+#: templates/base.html:156
 msgid "The login has failed. Please, try again."
 msgstr "O login falhou. Por favor, tente novamente."
 
-#: templates/base.html:182
+#: templates/base.html:183
 msgid "Last email imported at"
 msgstr "Último e-mail importado em"
 
-#: templates/base.html:189
-msgid "The contents of this site is published under license"
-msgstr "O conteúdo deste site está publicado sob a licença"
+#: templates/base.html:190
+#, fuzzy
+msgid "The contents and data of this website are published under license"
+msgstr "Os conteúdos e dados deste site estão publicados sob a licença"
 
-#: templates/base.html:192
-msgid ""
-"Creative Commons 3.0 Brasil - Atribuição - Não-Comercial - Compartilha-Igual"
-msgstr ""
+#: templates/base.html:193
+msgid "Creative Commons 4.0 Brasil - Atribuir Fonte - Compartilhar Igual"
+msgstr "Creative Commons 4.0 Brasil - Atribuir Fonte - Compartilhar Igual"
 
 #: templates/home.html:21
 msgid "Latest Collaborations"
@@ -1486,9 +1486,6 @@ msgstr ""
 
 #~ msgid "INTERLEGIS COMMUNITIES"
 #~ msgstr "COMUNIDADES INTERLEGIS"
-
-#~ msgid "Creative Commons - attribution, non-commercial"
-#~ msgstr "Creative Commons - atribuição e não-comercial"
 
 #~ msgid "Willing to help"
 #~ msgstr "Vontade de ajudar"
