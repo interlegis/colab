@@ -10,7 +10,7 @@
             <p><a href="/wiki/ComoUsarColab" style="color:#fff">Saiba mais...</a></p>
         </div>
         <div class="col-md-4 hidden-xs hidden-sm">
-            <form action="." method="POST" role="form">
+            <form action="{% url 'signup' %}" method="POST" role="form">
                 {% csrf_token %}
                 <div class="form-group">
                     <input id="{{ user_form.first_name.id_for_label }}" class="form-control" name="{{ user_form.first_name.html_name }}" maxlength="{{ user_form.first_name.field.max_length }} " type="text" placeholder="Nome">
