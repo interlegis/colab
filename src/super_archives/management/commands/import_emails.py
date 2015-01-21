@@ -220,8 +220,8 @@ class Command(BaseCommand, object):
         email = Message.all_objects.create(
             message_id=email_msg.get('Message-ID'),
             from_address=email_addr,
-            subject=subject,
-            subject_clean=self.RE_SUBJECT_CLEAN.sub('', subject).strip(),
+            subject=subject[:512],
+            subject_clean=self.RE_SUBJECT_CLEAN.sub('', subject).strip()[:512],
             body=email_msg.get_body(),
             received_time=email_msg.get_received_datetime(),
         )
