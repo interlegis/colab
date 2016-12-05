@@ -134,16 +134,18 @@ def signup(request):
 
     # Check if the user's email have been used previously
     #   in the mainling lists to link the user to old messages
+
     email_addr, created = EmailAddress.objects.get_or_create(address=user.email)
+
     if created:
         email_addr.real_name = user.get_full_name()
 
     email_addr.user = user
     email_addr.save()
 
-    messages.success(request, _('Your profile has been created!'))
-    messages.warning(request, _('You must login to validated your profile. '
-                                'Profiles not validated are deleted in 24h.'))
+    messages.success(request, _('Seu perfil foi criado com sucesso!'))
+    # messages.warning(request, _('You must login to validated your profile. '
+    #                            'Profiles not validated are deleted in 24h.'))
 
     return redirect('user_profile', username=user.username)
 
@@ -238,3 +240,20 @@ class ChangeXMPPPasswordView(UpdateView):
             _("You've changed your password successfully!")
         )
         return response
+
+
+def password_reset_done_custom(request):
+    msg = _(("Nós enviamos um email com as intrução para a "
+             "troca de senha. Você deve recebê-lo em breve. "
+             "Caso não receba, verifique sua caxa de spam. "))
+    messages.success(request, msg)
+
+    return redirect('home')
+
+
+def password_reset_complete_custom(request):
+    msg = _('Sua senha foi modificada com sucesso. '
+            'Faça o login.')
+    messages.success(request, msg)
+
+    return redirect('home')

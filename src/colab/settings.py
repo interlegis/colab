@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'd%gy$gfn4z2=z414qvqouyd2h6_i8nr_m4zmlxqklu15u!8&^@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -81,5 +81,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.interlegis.leg.br'
+EMAIL_PORT = 25
+EMAIL_SEND_USER = '"Colab Interlegis"<noreply@interlegis.leg.br>'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = '"Colab Interlegis"<noreply@interlegis.leg.br>' 
+
 
 from custom_settings import *

@@ -44,9 +44,57 @@ class UserForm(forms.ModelForm):
 
 
 class UserCreationForm(UserForm):
+    password = forms.CharField(
+        max_length=128,
+        widget=forms.PasswordInput())
+
+    confirm_password = forms.CharField(
+        max_length=128,
+        widget=forms.PasswordInput())
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'username')
+        fields = ('first_name',
+                  'last_name',
+                  'email',
+                  'username',
+                  'password',
+                  'confirm_password')
+
+    def clean(self):
+        super(UserCreationForm, self).clean()
+        data = self.cleaned_data
+
+        username = data.get('username')
+
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError(
+                'Esse nome de usuário já existe.')
+
+        if not 'password' in data or not 'confirm_password' in data:
+            raise forms.ValidationError(
+                'Preencha os campos de senha')
+
+        senha = self.cleaned_data['password']
+        confirma_senha = self.cleaned_data['confirm_password']
+
+        if senha != confirma_senha:
+            raise forms.ValidationError('As senhas não conferem.')
+
+
+        return self.cleaned_data
+
+    def save(self, commit=False):
+        user = User.objects.create(
+            first_name=self.cleaned_data['first_name'],
+            last_name=self.cleaned_data['last_name'],
+            email=self.cleaned_data['email'],
+            username=self.cleaned_data['username'])
+
+        user.set_password(self.cleaned_data['password'])
+
+        user.save()
+
+        return user
 
 
 class UserUpdateForm(UserForm):

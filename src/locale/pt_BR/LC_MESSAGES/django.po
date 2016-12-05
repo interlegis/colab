@@ -450,7 +450,6 @@ msgid "In one month"
 msgstr ""
 
 #: colab/custom_settings.py:313
-#, fuzzy
 msgid "Never"
 msgstr "Seriedade"
 

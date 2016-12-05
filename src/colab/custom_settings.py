@@ -132,7 +132,8 @@ LOGGING = {
     'disable_existing_loggers': False,
     'root': {
         'level': 'WARNING',
-        'handlers': ['sentry', 'console'],
+        #'handlers': ['sentry', 'console'],
+         'handlers': ['console'],
     },
     'formatters': {
         'verbose': {
@@ -151,10 +152,10 @@ LOGGING = {
             'include_html': True,
             'filters': ['require_debug_false'],
         },
-        'sentry': {
-            'level': 'ERROR',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
+        # 'sentry': {
+        #    'level': 'ERROR',
+        #    'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+        #},
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
@@ -163,30 +164,31 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins', 'sentry'],
+            #'handlers': ['mail_admins', 'sentry'],
+            'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
-       'django.db.backends': {
-            'level': 'ERROR',
-            'handlers': ['sentry'],
-            'propagate': False,
-        },
+       #'django.db.backends': {
+       #'level': 'ERROR',
+       #     'handlers': ['sentry'],
+       #     'propagate': False,
+       # },
         'raven': {
             'level': 'DEBUG',
             'handlers': ['console'],
             'propagate': False,
         },
-        'sentry.errors': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'django_browserid': {
-            'handlers': ['sentry'],
-            'level': 'WARNING',
-            'propagate': False,
-        },
+       #'sentry.errors': {
+       #     'level': 'DEBUG',
+       #     'handlers': ['console'],
+       #     'propagate': False,
+       #},
+       #'django_browserid': {
+       #     'handlers': ['sentry'],
+       #     'level': 'WARNING',
+       #     'propagate': False,
+       #},
         'conversejs': {
             'handlers': ['console'],
             'level': 'DEBUG',
@@ -195,10 +197,10 @@ LOGGING = {
     }
 }
 
-COLAB_FROM_ADDRESS = '"Colab Interlegis" <noreply@interlegis.leg.br>'
-SERVER_EMAIL = COLAB_FROM_ADDRESS
-EMAIL_HOST = 'smtp.interlegis.leg.br'
-EMAIL_PORT = 25
+# COLAB_FROM_ADDRESS = '"Colab Interlegis" <noreply@interlegis.leg.br>'
+# SERVER_EMAIL = COLAB_FROM_ADDRESS
+# EMAIL_HOST = 'smtp.interlegis.leg.br'
+# EMAIL_PORT = 25
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',

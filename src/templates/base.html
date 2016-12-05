@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load i18n browserid conversejs gravatar %}
+{% load i18n conversejs gravatar %}
 <html>
   <head>
   {% block head %}
@@ -106,12 +106,12 @@
                 <ul class="dropdown-menu">
                   <li><a href="{% url 'signup' %}">{% trans "Register" %}</a></li>
                   {% trans 'Login' as login_text %}
-                  <li>{% browserid_login text=login_text %}</li>
+                  <li><a href="{% url 'novo_login' %}">Login</a></li></li>
                 </ul>
               </li>
               <li class="visible-xs hidden-sm hidden-md"><a href="{% url 'signup' %}">{% trans "Register" %}</a></li>
               {% trans 'Login' as login_text %}
-              <li class="visible-xs hidden-sm hidden-md">{% browserid_login text=login_text %}</li>
+              <li class="visible-xs hidden-sm hidden-md"><a href="{% url 'novo_login' %}">Login</a></li>
             {% else %}
               <li id="user-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle user" data-toggle="dropdown">{% gravatar user.email 40 %} <b class="caret"></b>&nbsp;&nbsp;</a>
@@ -126,7 +126,7 @@
                       <div>
                         <a class="btn btn-info pull-left" href="{% url 'user_profile' user.username %}">{% trans "My Profile" %}</a>
                         {% trans 'Logout' as logout_text %}
-                        {% browserid_logout text=logout_text link_class='btn btn-default pull-right' %}
+                        <a href="{% url 'novo_logout' %}" class="btn btn-default pull-right">Logout</a>
                       </div>
                     </div>
                   </li>
@@ -203,7 +203,6 @@
   {% endif %}
 
   {% include "tz/set_utc_offset.html" %}
-  {% browserid_js %}
 
   {% block footer_js %}{% endblock %}
   </body>

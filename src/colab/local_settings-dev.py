@@ -1,7 +1,7 @@
 
 from custom_settings import *
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -34,6 +34,15 @@ HAYSTACK_CONNECTIONS['default']['URL'] = 'http://localhost:8983/solr/'
 
 COLAB_TRAC_URL = 'http://localhost:5000/'
 COLAB_CI_URL = 'http://localhost:8080/ci/'
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
 
 CONVERSEJS_ENABLED = False
 
