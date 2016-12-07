@@ -35,7 +35,7 @@ urlpatterns = patterns('',
 
     url(r'^change-password/?$', auth_views.password_change,
         {'template_name': 'registration/password_change_form_custom.html'},
-        name='password_change'),
+        name='change_password'),
 
     url(r'^logout/?$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='novo_logout'),
 
