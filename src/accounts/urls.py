@@ -11,6 +11,10 @@ from .views import (UserProfileDetailView, UserProfileUpdateView,
 urlpatterns = patterns('',
     url(r'^register/$', 'accounts.views.signup', name='signup'),
 
+    url(r'^change-password-xmpp/$',
+        ChangeXMPPPasswordView.as_view(),
+        name='change_password_xmpp'),
+
     url(r'^novo-login/$',
         login,
         {'template_name': 'novo_login.html',
